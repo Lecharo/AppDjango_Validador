@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de validación</title>
+</head>
+<body>
+    <h1>Resultado de validación</h1>
+    {% if errores %}
+        <h2>Se encontraron los siguientes errores:</h2>
+        <ul>
+        {% for error in errores %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <a href="{% url 'validar_csv' %}">Volver a cargar un archivo</a>
+</body>
+</html>
